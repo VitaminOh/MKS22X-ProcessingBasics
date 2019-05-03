@@ -43,10 +43,14 @@ class Visualizer {
     float rectWidth = 400 / values.length;
     float iterations = 0.0;
     for (float i : values) {
-      if (y + 100 - i > 120) {
-        fill(255,0,0);
-      } else {
+      if (y + 100 - i < 70) {
         fill(0,255,0);
+      } else if (y + 100 - i > 70 && y + 100 - i < 120) {
+        fill(255,255,0);
+      } else if (y + 100 - i > 120 && y + 100 - i < 170) {
+        fill(255,140,0);
+      } else if (y + 100 - i > 120 && y + 100 - i > 170) {
+        fill(255,0,0);
       }
       rect(20 + (iterations * rectWidth), y + 100 - i, rectWidth, i);
       iterations += 1.0;
